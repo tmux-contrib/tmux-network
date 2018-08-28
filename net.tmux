@@ -1,18 +1,23 @@
-#!/bin/bash
+#!/bin/bash -x
 
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-NET_IP="#($CURRENT_DIR/script/ip.tmux)"
-NET_IP_INTERPOLATION_STRING="\\#{net_ip}"
+NET_PUBLIC_IP="#($CURRENT_DIR/script/public_ip.tmux)"
+NET_PUBLIC_IP_INTERPOLATION_STRING="\\#{net_public_ip}"
+
+NET_PRIVATE_IP="#($CURRENT_DIR/script/private_ip.tmux)"
+NET_PRIVATE_IP_INTERPOLATION_STRING="\\#{net_private_ip}"
 
 # shellcheck disable=1090
 source "${CURRENT_DIR}/script/util.sh"
 
 do_interpolation() {
-  local string="$1"
-  local interpolated="${string/$NET_IP_INTERPOLATION_STRING/$NET_IP}"
+  local text="$1"
 
-  echo "$interpolated"
+  text="${text/$NET_PUBLIC_IP_INTERPOLATION_STRING/$NET_PUBLIC_IP}"
+  text="${text/$NET_PRIVATE_IP_INTERPOLATION_STRING/$NET_PRIVATE_IP}"
+
+  echo "$text"
 }
 
 update_tmux_option() {

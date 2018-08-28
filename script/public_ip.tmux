@@ -14,10 +14,10 @@ fetch_ip_data() {
 main() {
    check_dependencies
 
-   IP_DATA=$(fetch_ip_data)
-   IP_ADDRESS=$(echo "$IP_DATA" | jq -r .query)
+   PUBLIC_IP_DATA=$(fetch_ip_data)
+   PUBLIC_IP_ADDRESS=$(echo "$PUBLIC_IP_DATA" | jq -r .query)
 
-   echo "$IP_ADDRESS"
+   echo "$PUBLIC_IP_ADDRESS"
 }
 
 main
