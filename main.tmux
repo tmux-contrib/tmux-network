@@ -3,10 +3,10 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # shellcheck disable=1090
-source "${CURRENT_DIR}/scripts/helpers.sh"
+source "${CURRENT_DIR}/scripts/tmux-core.sh"
 
 # shellcheck disable=1090
-net_public_ip="#(${CURRENT_DIR}/scripts/network.sh get-public-ip)"
+net_public_ip="#(${CURRENT_DIR}/scripts/tmux-network.sh get-public-ip)"
 net_public_ip_pattern="\#{net_public_ip}"
 
 # shellcheck disable=1090
