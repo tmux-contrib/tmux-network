@@ -11,15 +11,15 @@
 # Example:
 #   set -g status-right "#{net_private_ip} | %H:%M"
 
-CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+_tmux_network_root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# shellcheck source=scripts/core.sh
-source "${CURRENT_DIR}/scripts/core.sh"
+# shellcheck source=scripts/tmux_network_core.sh
+source "$_tmux_network_root_dir/scripts/tmux_network_core.sh"
 
-net_public_ip="#(${CURRENT_DIR}/scripts/tmux-network.sh get-public-ip)"
+net_public_ip="#($_tmux_network_root_dir/scripts/tmux_network.sh get-public-ip)"
 net_public_ip_pattern="\#{net_public_ip}"
 
-net_private_ip="#(${CURRENT_DIR}/scripts/tmux-network.sh get-private-ip)"
+net_private_ip="#($_tmux_network_root_dir/scripts/tmux_network.sh get-private-ip)"
 net_private_ip_pattern="\#{net_private_ip}"
 
 # Interpolate network IP patterns in content.
