@@ -38,7 +38,7 @@ net_private_ip_pattern="\#{net_private_ip}"
 #   The content with patterns replaced by tmux command strings
 # Returns:
 #   0 on success
-tmux_interpolate() {
+_tmux_interpolate() {
 	local content="$1"
 
 	content="${content/$net_public_ip_pattern/$net_public_ip}"
@@ -59,14 +59,14 @@ tmux_interpolate() {
 #   $1 - The name of the tmux option to update (e.g., "status-right")
 # Returns:
 #   0 on success
-tmux_update_option() {
+_tmux_update_option() {
 	local option="$1"
 	local option_value
 
-	option_value="$(tmux_get_option "$option")"
+	option_value="$(_tmux_get_option "$option")"
 	option_value="$(tmux_interpolate "$option_value")"
 
-	tmux_set_option "$option" "$option_value"
+	_tmux_set_option "$option" "$option_value"
 }
 
 # Main entry point for the plugin.

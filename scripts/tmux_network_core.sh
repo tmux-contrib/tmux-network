@@ -14,7 +14,7 @@
 #   The option value or default value to stdout
 # Returns:
 #   0 on success
-tmux_get_option() {
+_tmux_get_option() {
 	local option="$1"
 	local default_value="$2"
 	local option_value
@@ -34,7 +34,7 @@ tmux_get_option() {
 #   $2 - The value to set the option to
 # Returns:
 #   0 on success, non-zero on failure
-tmux_set_option() {
+_tmux_set_option() {
 	local option="$1"
 	local value="$2"
 
