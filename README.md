@@ -4,13 +4,13 @@ A tmux plugin that displays public and private IP addresses in the status bar.
 
 ## Installation
 
-```tmux
-# configure the tmux plugins manager
-set -g @plugin "tmux-plugins/tpm"
+Add this plugin to your `~/.tmux.conf`:
 
-# official plugins
+```tmux
 set -g @plugin 'tmux-contrib/tmux-network'
 ```
+
+And install it by running `<prefix> + I`.
 
 ## Usage
 
@@ -26,3 +26,33 @@ set -g status-right "#{net_private_ip} | #{net_public_ip}"
 |---------------------|------------------------------------------|
 | `#{net_public_ip}`  | Public IP address (from ip-api.com)      |
 | `#{net_private_ip}` | Private IP address (from en0 interface)  |
+
+## Development
+
+### Prerequisites
+
+Install dependencies using [Nix](https://nixos.org/):
+
+```sh
+nix develop
+```
+
+Or install manually: `bash`, `tmux`, `bats`
+
+### Running Tests
+
+```sh
+bats tests/
+```
+
+### Debugging
+
+Enable trace output with the `DEBUG` environment variable:
+
+```sh
+DEBUG=1 /path/to/tmux-network/scripts/tmux_network.sh get-public-ip
+```
+
+## License
+
+MIT
