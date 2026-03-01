@@ -1,6 +1,6 @@
 # tmux-network
 
-A tmux plugin that displays public and private IP addresses in the status bar.
+Display your public and private IP addresses in the tmux status bar.
 
 ## Installation
 
