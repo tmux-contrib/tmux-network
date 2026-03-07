@@ -12,11 +12,11 @@ _tmux_network_root="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=scripts/tmux_core.sh
 source "$_tmux_network_root/scripts/tmux_core.sh"
 
-net_public_ip="#($_tmux_network_root/scripts/tmux_network.sh get-public-ip)"
-net_public_ip_pattern="\#{net_public_ip}"
+network_public_ip="#($_tmux_network_root/scripts/tmux_network.sh get-public-ip)"
+network_public_ip_pattern="\#{network_public_ip}"
 
-net_private_ip="#($_tmux_network_root/scripts/tmux_network.sh get-private-ip)"
-net_private_ip_pattern="\#{net_private_ip}"
+network_private_ip="#($_tmux_network_root/scripts/tmux_network.sh get-private-ip)"
+network_private_ip_pattern="\#{network_private_ip}"
 
 _tmux_interpolate() {
 	local content=$1
@@ -31,8 +31,8 @@ _tmux_update_option() {
 	local option_value
 
 	option_value="$(_tmux_get_option "$option")"
-	option_value="$(_tmux_interpolate "$option_value" "$net_public_ip_pattern" "$net_public_ip")"
-	option_value="$(_tmux_interpolate "$option_value" "$net_private_ip_pattern" "$net_private_ip")"
+	option_value="$(_tmux_interpolate "$option_value" "$network_public_ip_pattern" "$network_public_ip")"
+	option_value="$(_tmux_interpolate "$option_value" "$network_private_ip_pattern" "$network_private_ip")"
 
 	_tmux_set_option "$option" "$option_value"
 }

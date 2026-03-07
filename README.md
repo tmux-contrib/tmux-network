@@ -17,15 +17,15 @@ And install it by running `<prefix> + I`.
 Add the format strings to your status bar:
 
 ```tmux
-set -g status-right "#{net_private_ip} | #{net_public_ip}"
+set -g status-right "#{network_private_ip} | #{network_public_ip}"
 ```
 
 ### Format Strings
 
-| Format String       | Description                              |
-|---------------------|------------------------------------------|
-| `#{net_public_ip}`  | Public IP address (from ip-api.com)      |
-| `#{net_private_ip}` | Private IP address (from en0 interface)  |
+| Format String           | Description                              |
+|-------------------------|------------------------------------------|
+| `#{network_public_ip}`  | Public IP address (from ip-api.com)      |
+| `#{network_private_ip}` | Private IP address (from en0 interface)  |
 
 ## Development
 
