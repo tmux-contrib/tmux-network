@@ -2,7 +2,7 @@
 
 > Display your public and private IP addresses in the tmux status bar.
 
-[![Test](https://github.com/tmux-contrib/tmux-network/actions/workflows/test.yml/badge.svg)](https://github.com/tmux-contrib/tmux-network/actions/workflows/test.yml) [![Release](https://img.shields.io/github/v/release/tmux-contrib/tmux-network)](https://github.com/tmux-contrib/tmux-network/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/tmux-contrib/tmux-network/actions/workflows/ci.yml/badge.svg)](https://github.com/tmux-contrib/tmux-network/actions/workflows/ci.yml) [![Release](https://img.shields.io/github/v/release/tmux-contrib/tmux-network)](https://github.com/tmux-contrib/tmux-network/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Installation
 
