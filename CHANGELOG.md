@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/tmux-contrib/tmux-network/compare/v0.2.1...v0.2.2) (2026-05-04)
+
+
+### Bug Fixes
+
+* **github:** correct action versions in update.yml ([2751678](https://github.com/tmux-contrib/tmux-network/commit/275167874c1b1b25052abd6cc12ce7e58c91e976))
+
 ## [0.2.1](https://github.com/tmux-contrib/tmux-network/compare/v0.2.0...v0.2.1) (2026-04-11)
 
 
